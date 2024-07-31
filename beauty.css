@@ -1,0 +1,249 @@
+body {
+    background: #F2f2f2;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #e0dada, #b8c2e4);
+    padding: 10px;
+}
+
+.horizontal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2b4491;
+    font-size: 20px;
+}
+
+.horizontal-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.horizontal-nav li {
+    margin-right: 20px;
+}
+
+.horizontal-nav a {
+    text-decoration: none;
+    color: #2b4491;
+    transition: color 0.3s ease;
+}
+
+.horizontal-nav a:hover {
+    color: #007bff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.card {
+    flex: 1;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    padding: 20px;
+    height: 300px;
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-card {
+    background-color: #f9f9f9;
+}
+
+.login-card {
+    background-color: #e9e9e9;
+    justify-content: center;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 1em;
+}
+
+p {
+    margin-top: 8px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.login-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.fade-in {
+    align-items: center;
+}
+
+h2 {
+    font-size: 20px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    font-size: 50px;
+    color: #103a66;
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 38px;
+}
+
+.hover-button {
+    background-color: rgb(46, 72, 99);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    width: 200px;
+}
+
+.hover-button:hover {
+    background-color: rgb(30, 164, 218);
+}
+
+.input-box {
+    border-radius: 30px;
+    padding: 10px;
+    border: 1px solid #2b4491;
+    background-color: transparent;
+    outline: #2b4491;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .left-group {
+    display: flex;
+    margin-left: 80px;
+}
+
+.container .left-group .label {
+    margin-right: 0px;
+}
+
+.container .right-group {
+    display: flex;
+    margin-right: 80px;
+}
+
+.container .right-group .label {
+    margin-left: 10px;
+}
+
+#registration-form {
+    background-color: #F2DCD3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 900px;
+    height: 700px;
+    font-size: 20px;
+    margin: auto;
+}
+
+input[type="gender"],
+input[type="symptom-description"] {
+    font-size: 16px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#registration-form button {
+    background-color: rgb(30, 164, 218);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    display: block;
+    font-size: 15px;
+    margin: 20px auto 0 auto;
+}
+
+.custom-form {
+    background-color: #EACBD0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.image-card img {
+    width: 700px; /* Set the width of the image */
+    height: 1280px; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+.custom-form button {
+    background-color: rgb(30, 164, 218);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto 0 auto;
+}
+
+.custom-form button:hover {
+    background-color: rgb(46, 72, 99);
+}
+
+.contact-container {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 600px; /* Optional: Set a maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Optional: Add padding for spacing */
+    background-color: #f9f9f9; /* Optional: Set a background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for styling */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
