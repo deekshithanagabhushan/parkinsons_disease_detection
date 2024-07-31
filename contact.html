@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href = "{{url_for('static', filename = 'beauty.css')}}">
+    <title>Parkinson</title>
+</head>
+<body>
+    <header>
+        <nav class="horizontal-nav">
+            <h1 class="fade-in">Parkinsons Disease</h1>
+            <ul>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
+            </ul>
+        </nav>
+        <form class="custom-form">
+            <h1>Developers:</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <ul>
+                        <li>Name: Rakshitha Banapur</li>
+                        <li>Email: <a href="mailto:rakshithabanapur@gmail.com">rakshithabanapur@gmail.com</a></li>
+                        <li>Phone: <a href="tel:+923110163756">+92 311 0163756</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <ul>
+                        <li>Name: Deekshitha N</li>
+                        <li>Email: <a href="mailto:deekshitha@gmail.com">deekshitha@gmail.com</a></li>
+                        <li>Phone: <a href="tel:+913456728953">+91 345 6728953</a></li>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+        </form>
+    </header>
+</body>
+</html>

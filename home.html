@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href = "{{url_for('static', filename = 'beauty.css')}}">
+        <title>Parkinson</title>
+    </head>
+    <style>
+        .hover-button {
+  background-color: rgb(46, 72, 99);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  width:200px
+}
+
+.hover-button:hover {
+  background-color: rgb(30, 164, 218);
+}
+
+        .input-box {
+        border-radius: 30px;
+        padding: 10px;
+        border: 1px solid #2b4491;
+        background-color: transparent;
+        outline:#2b4491 ;
+        margin-top: 20px;
+        width: 200px
+        }
+        .container {
+          display: flex; /* Use flexbox to create a row layout */
+          justify-content: space-between; /* Distribute items evenly with space between */
+          align-items: center; /* Align items vertically in the center */
+        }
+
+        .container .left-group {
+          display: flex; /* Use flexbox to create a column layout */
+          margin-left: 80px;
+        }
+
+        .container .left-group .label {
+          margin-right: 0px; /* Add some spacing between the label and input box */
+        }
+
+        .container .right-group {
+          display: flex; /* Use flexbox to create a column layout */
+          margin-right: 80px;
+        }
+
+        .container .right-group .label {
+          margin-left: 10px; /* Add some spacing between the label and input box */
+        }
+        </style>
+    <body>
+        <header>
+
+            <nav class="horizontal-nav">
+                <h1 class="fade-in">Parkinson's Disease Detection</h1>
+                <ul>
+                    <li><a href = "{{url_for('home')}}">Home</a></li>
+                    <li><a href = "{{url_for('about')}}">About</a></li>
+                    <li><a href = "{{url_for('contact')}}">Contact</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        <div class="box">
+            <h2>
+                Parkinson's disease is a neurodegenerative disorder characterized by progressive loss of control over movements, tremors, and other motor and non-motor symptoms.Parkinson's disease is caused by the disruption of the brain cells that produce substance to allow brain cells to communicate with each other, called dopamine. The cells that produce dopamine in the brain are responsible for the control, adaptation and fluency of movements. When 60-80% of these cells are lost, then enough dopamine is not produced and Parkinson's motor symptoms appear. It is thought that the disease begins many years before the motor (movement related) symptoms.
+            </h2>
+        </div>
+        <div class="image">
+            <img src="https://goldenheartwalnutcreek.com/wp-content/uploads/sites/17/2021/07/bigstock-Parkinson-s-Disease-Word-Cloud-113145074.jpg ">
+        </div>
+        <div>
+            <h3>HEY THERE! </h3>
+            <h2>"Worried about signs of Parkinson's disease? Check here for more information on early symptoms, diagnostic methods, and treatment options.Our mission is to provide you with the latest research and advancements in Parkinson's care. Discover support resources, lifestyle tips, and expert advice to help you and your loved ones navigate the challenges of Parkinson's disease. Learn how voice analysis can aid in early detection and improve management of this neurological disorder. Stay informed and take proactive steps towards better health."</h2>
+            <h2><a href="https://www.who.int/news-room/fact-sheets/detail/parkinson-disease">Click here,To know more</a></h2>
+        </div>
+        <br>
+        <br>
+        <div class="reg">
+            <section id="Register here">
+                <form id="registration-form">
+                    <h3>Registration Form</h3>
+                    <h2><p>Please register below to take the Parkinson's disease detection test.</p></h2>
+
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                    <br>
+                    <br>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <br>
+                    <br>
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" required>
+                    <br>
+                    <br>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select...</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label for="symptom-description">Briefly describe any symptoms you have noticed (optional)</label>
+                    <br>
+                    <br>
+                    <textarea id="symptom-description" name="symptom-description" rows="10"></textarea>
+                    <br>
+                    <br>
+                    <center><button type="submit">SUBMIT</button></center>
+                </form>
+            </section>
+        </div>
+
+        <script>
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Registered successfully');
+            });
+        </script>
+        <br>
+        <br>
+        <form class="custom-form" action="{{ url_for('predict')}}"method="POST">
+            <center><h3>Please Fill up your Medical Report: &#x1F60A; </h3></center>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:Fo(Hz): ">MDVP:Fo(Hz) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Fo(Hz)" name="MDVP:Fo(Hz)" required="required">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="MDVP:Fhi(Hz): ">MDVP:Fhi(Hz) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Fhi(Hz)" name="MDVP:Fhi(Hz)" required="required">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:Flo(Hz): ">MDVP:Flo(Hz) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Flo(Hz)" name="MDVP:Flo(Hz) required="required"">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="MDVP:Jitter(%): ">MDVP:Jitter(%) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Jitter(%)" name="MDVP:Jitter(%) required="required"">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:Jitter(Abs): ">MDVP:Jitter(Abs) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Jitter(Abs)" name="MDVP:Jitter(Abs) required="required"">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="MDVP:RAP: ">MDVP:RAP </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:RAP" name="MDVP:RAP">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:PPQ: ">MDVP:PPQ </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:PPQ" name="MDVP:PPQ">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="Jitter:DDP: ">Jitter:DDP </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="Jitter:DDP" name="Jitter:DDP">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:Shimmer: ">MDVP:Shimmer </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Shimmer" name="MDVP:Shimmer">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="MDVP:Shimmer(dB): ">MDVP:Shimmer(dB) </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:Shimmer(dB)" name="MDVP:Shimmer(dB)">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="Shimmer:APQ3: ">Shimmer:APQ3 </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="Shimmer:APQ3" name="Shimmer:APQ3">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="Shimmer:APQ5: ">Shimmer:APQ5 </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="Shimmer:APQ5" name=Shimmer:APQ5">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="MDVP:APQ: ">MDVP:APQ </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="MDVP:APQ" name="MDVP:APQ">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="Shimmer:DDA: ">Shimmer:DDA </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="Shimmer:DDA" name=Shimmer:DDA">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="NHR: ">NHR </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="NHR" name="NHR">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="HNR: ">HNR </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="HNR" name=HNR">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="status: ">status </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="status" name="status">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="RPDE: ">RPDE </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="RPDE" name=RPDE">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="DFA: ">DFA </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="DFA" name="DFA">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="spread1: ">spread1 </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="spread1" name=spread1">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="spread2: ">spread2 </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="spread2" name="spread2">
+                </div>
+                <div class="right-group">
+                    <label class="label-right" for="D2: ">D2 </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="D2" name=D2">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <div class="container">
+                <div class="left-group">
+                    <label class="label-left" for="PPE: ">PPE </label>
+                    <input class="input-box" type="text"  class="rounded-input" placeholder="PPE" name="PPE">
+                </div>
+            </div>
+            <br>
+            <br>
+            <center><button type="submit" class="btn btn-primary btn-block btn-large rounded">Predict</button>            </center>
+        </form>
+
+        <br>
+
+        <div>
+
+            <br>
+            <br>
+            <h1> {{ prediction_text }}</h1>
+        </div>
+    </body>
+</html>
